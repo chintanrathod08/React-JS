@@ -17,6 +17,7 @@
 h1{
   font-size: 28px;
   font-weight: bold;
+  
 }
 
 footer p,a{
@@ -29,11 +30,18 @@ input:focus, select:focus {
   border-right: none;
 }
 
+.sec-1{
+  box-shadow: 0px 0px 5px 0px dimgray;
+}
 
+.ss1{
+  color: blue;
+}
 
 .ss1:hover{
   color:  #FB641B;
   cursor: pointer;
   padding-bottom:10px;
   text-decoration: underline;
+  margin-top: 10%;
 }
