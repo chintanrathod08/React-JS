@@ -1,0 +1,20 @@
+body{
+  background-color: white;
+  color: black;
+}
+
+*{
+   margin: 0px;
+   padding: 0px;
+   box-sizing: border-box;
+}
+
+.card{
+  cursor: pointer;
+}
+
+#cardimg{
+  width: 250px;
+  height: 250px;
+}
+

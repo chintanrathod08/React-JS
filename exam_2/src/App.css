@@ -1,0 +1,90 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  font-family: "Poppins", serif;
+}
+
+
+
+#head{
+  border: 1.7px solid rgb(225, 225, 225);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+#bt1:hover{
+  box-shadow: 0px 0px 5px 0px rgba(255, 42, 0, 0.947);
+}
+
+.h1{
+  /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+}
+
+#c1{
+  background-image: url(https://masai-website-images.s3.ap-south-1.amazonaws.com/karthika_Karthika_Ramanujam_05c29d3483.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.226);
+}
+
+#c2{
+  background-image: url(https://masai-website-images.s3.ap-south-1.amazonaws.com/Nrupul_d3fe3b289a.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.226);
+}
+#c3{
+  background-image: url(https://masai-website-images.s3.ap-south-1.amazonaws.com/Subhendu_1863b7e0ff.jfif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.226);
+}
+#c4{
+  background-image: url(https://masai-website-images.s3.ap-south-1.amazonaws.com/keshav_misra_203a893693.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.226);
+}
+
+#c11{
+  background-image: url(https://masai-website-images.s3.ap-south-1.amazonaws.com/IMG_2262_Kishore_Acharya_098d2f5a9c.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.226);
+}
+
+#c22{
+  background-image: url(https://masai-website-images.s3.ap-south-1.amazonaws.com/John_PP_Nishut_Suman_Mahunta_1_13156c198b.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.226);
+}
+#c33{
+  background-image: url(https://masai-website-images.s3.ap-south-1.amazonaws.com/Whats_App_Image_2022_07_26_at_6_42_42_PM_Anand_Singh_Yadav_1_55418f0db0.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.226);
+}
+#c44{
+  background-image: url(https://masai-website-images.s3.ap-south-1.amazonaws.com/Rahul_Rajeevan_1_db17ca07d7.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.226);
+}
