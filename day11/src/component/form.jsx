@@ -8,7 +8,9 @@ function Form() {
          img : "",
          price : 0
        })
+       
        const [arr,setarr] = useState([])
+       
        const handleChange = (e)=>{
            const {name,value} = e.target
           setState({...state,[name] : value})
