@@ -38,7 +38,7 @@ function Login() {
         }
     }
 
-    function loginData(h) {
+    function loginData(h){
         var { name, value } = h.target
 
         if (name == "user") {

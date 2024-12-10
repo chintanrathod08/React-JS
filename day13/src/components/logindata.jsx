@@ -11,7 +11,7 @@ function logindata(props) {
             </div>
         })}
         </div>
-  )
+    )
 }
 
 export default logindata
