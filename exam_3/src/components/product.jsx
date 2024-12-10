@@ -10,7 +10,7 @@ function Product() {
         proimg : ""
     })
 
-
+    var [btnsub,setbtnsub] = useState(true)
     var [pnErr, setpnErr] = useState(false)
     var [ppErr,setppErr]=useState(false)
     var [pdErr, setpdErr] = useState(false)
@@ -19,7 +19,10 @@ function Product() {
         const {name,value} = p.target
         setProduct({...product, [name] : value })
         console.log(product);
-        
+
+        if(p.target.value > 0){
+            setbtnsub(false)
+        }
     }
 
     function hlBlure(b){
@@ -35,7 +38,7 @@ function Product() {
         if (name == "prodes" && value.length >=200 ) {
             setpdErr(true)
         }
-     }
+    }
 
 
 
@@ -50,7 +53,6 @@ function Product() {
         if(name == "prodes"){
            setpdErr(false)
         }
-        
     }
 
     function submitData(e) {
@@ -71,11 +73,11 @@ function Product() {
       
       <h1>Product Form</h1> <br /> 
      
-      <input type="text" name='proname'  placeholder='Enter Product Name' onChange={Prochange} onBlur={hlBlure} onFocus={hlFocus} style={pnErr == true ? { borderColor: "red" }: { borderColor: "black" }}  /> <br />
+      <input type="text" name='proname'  placeholder='Enter Product Name' onChange={Prochange} onBlur={hlBlure} onFocus={hlFocus} style={pnErr == true ? { borderColor: "rgba(244, 74, 40, 0.942)" }: { borderColor: "black" }}  /> <br />
       { pnErr == true ? <p>Must be at least 3 characters long.</p> : ""}
        <br />
       
-      <input type="number" name='proprice' placeholder='Enter Product Price' onChange={Prochange} onBlur={hlBlure} onFocus={hlFocus} style={ppErr == true ? { borderColor: "red" }: { borderColor: "black" }}  /> <br />
+      <input type="number" name='proprice' placeholder='Enter Product Price' onChange={Prochange} onBlur={hlBlure} onFocus={hlFocus} style={ppErr == true ? { borderColor: "rgba(244, 74, 40, 0.942)" }: { borderColor: "black" }}  /> <br />
       { ppErr == true ? <p>Must be a positive number.</p> : ""}
 
       <br />
@@ -88,14 +90,14 @@ function Product() {
         <option value="Books">Books</option>
         </select><br /><br />
      
-      <input type="text" name='prodes' placeholder='Product Description' onChange={Prochange} onBlur={hlBlure} onFocus={hlFocus} style={pdErr == true ? { borderColor: "red" }: { borderColor: "black" }}  /> <br />
+      <input type="text" name='prodes' placeholder='Product Description' onChange={Prochange} onBlur={hlBlure} onFocus={hlFocus} style={pdErr == true ? { borderColor: "rgba(244, 74, 40, 0.942)" }: { borderColor: "black" }}  /> <br />
       { pdErr == true ? <p>Maximum of 200 characters.</p> : ""}
       
         <br />
      
-      <input type="text" name='proimg' placeholder='Product Image'  onChange={Prochange} onBlur={hlBlure} onFocus={hlFocus} /><br /><br />
+      <input type="file" id='imgfile' name='proimg' placeholder='Product Image'  onChange={Prochange} onBlur={hlBlure} onFocus={hlFocus} /><br /><br />
 
-      <input type="submit" className='sub' />
+      <input type="submit" disabled={btnsub} className='sub' />
       </form>
     </div>
     

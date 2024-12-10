@@ -21,10 +21,11 @@ form{
     /* border: 1px solid black; */
     border-radius: 10px;
     text-align: center;
-    /* box-shadow: 0px 0px 10px 2px dimgray; */
-    box-shadow: 0px 0px 10px 3px rgba(244, 74, 40, 0.942);
-    /* background-color: rgb(234, 234, 234); */
+    
+    box-shadow: 0px 0px 20px 2px rgba(244, 74, 40, 0.942);
 }
+
+
 
 input{
     width: 70%;
@@ -41,15 +42,25 @@ select{
     height: 35px;
     border-radius: 10px;
     padding-left: 10px;
+    color: dimgray;
 }
 
 .sub{
     background-color: rgba(244, 74, 40, 0.942);
     font-size: 18px;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.sub:disabled{
+    background-color: black;
+    font-size: 18px;
     color: white;
     border: none;
     cursor: pointer;
 }
+
 
 .sub:hover{
     box-shadow: 0px 0px 10px 2px rgba(244, 74, 40, 0.942);
@@ -61,4 +72,10 @@ p{
     font-size: 13px;
     text-align: left;
     margin-left: 17%;
+    
 }
+
+#imgfile{
+    border: none;
+}
+
