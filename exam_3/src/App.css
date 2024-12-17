@@ -54,7 +54,7 @@ select{
 }
 
 .sub:disabled{
-    background-color: black;
+    background-color: rgba(219, 149, 135, 0.942);
     font-size: 18px;
     color: white;
     border: none;

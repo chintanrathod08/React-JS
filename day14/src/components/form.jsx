@@ -36,7 +36,7 @@ function Form() {
         
     } 
 
-    const addMore2 = ()=>{
+    const addMore2 =()=>{
 
         setObj({...obj,hobbies : [...obj.hobbies , ""]})
     } 

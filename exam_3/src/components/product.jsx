@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
+import Viewproduct from './viewproduct'
+ 
 
 function Product() {
 
@@ -10,10 +12,13 @@ function Product() {
         proimg : ""
     })
 
+    var [toggleBtn,setTogglebtn] = useState(true)
     var [btnsub,setbtnsub] = useState(true)
     var [pnErr, setpnErr] = useState(false)
-    var [ppErr,setppErr]=useState(false)
+    var [ppErr,setppErr]= useState(false)
     var [pdErr, setpdErr] = useState(false)
+    var [arr,setArr] = useState([])
+
 
     const Prochange = (p)=>{
         const {name,value} = p.target
@@ -35,7 +40,7 @@ function Product() {
             setppErr(true)
         }
 
-        if (name == "prodes" && value.length >=200 ) {
+        if (name == "prodes" && value.length >= 200 ) {
             setpdErr(true)
         }
     }
@@ -57,7 +62,8 @@ function Product() {
 
     function submitData(e) {
         e.preventDefault()
-
+        setArr([...arr,product])
+       
         if( pnErr == false && ppErr == false && pdErr == false){
             setProduct(product)
             alert("Product Data Submit Successfully")
@@ -65,15 +71,27 @@ function Product() {
         else{
             alert("Please Fill Product Data ")
         }
+
+        setTogglebtn(true)
+
+    }   
+
+    const show=()=>{
+        setTogglebtn(false)
     }
 
 
-  return ( <> <div className='main'>
+  return ( <> 
+
+    { toggleBtn == true ? <button onClick={show} >Show Product Form</button> :
+
+    <div className='main'>
+   
       <form action="" onSubmit={submitData}>
       
       <h1>Product Form</h1> <br /> 
-     
-      <input type="text" name='proname'  placeholder='Enter Product Name' onChange={Prochange} onBlur={hlBlure} onFocus={hlFocus} style={pnErr == true ? { borderColor: "rgba(244, 74, 40, 0.942)" }: { borderColor: "black" }}  /> <br />
+        
+      <input type="text"  autoFocus name='proname'  placeholder='Enter Product Name' onChange={Prochange} onBlur={hlBlure} onFocus={hlFocus} style={pnErr == true ? { borderColor: "rgba(244, 74, 40, 0.942)" }: { borderColor: "black" }}  /> <br />
       { pnErr == true ? <p>Must be at least 3 characters long.</p> : ""}
        <br />
       
@@ -88,19 +106,26 @@ function Product() {
         <option value="Clothing">Clothing</option>
         <option value="Groceries">Groceries</option>
         <option value="Books">Books</option>
-        </select><br /><br />
+     </select><br /><br />
      
       <input type="text" name='prodes' placeholder='Product Description' onChange={Prochange} onBlur={hlBlure} onFocus={hlFocus} style={pdErr == true ? { borderColor: "rgba(244, 74, 40, 0.942)" }: { borderColor: "black" }}  /> <br />
       { pdErr == true ? <p>Maximum of 200 characters.</p> : ""}
       
-        <br />
+      <br />
      
-      <input type="file" id='imgfile' name='proimg' placeholder='Product Image'  onChange={Prochange} onBlur={hlBlure} onFocus={hlFocus} /><br /><br />
-
-      <input type="submit" disabled={btnsub} className='sub' />
+      <input type="file" id='imgfile' name='proimg' placeholder='Product Image'  onChange={Prochange} onBlur={hlBlure} onFocus={hlFocus} /><br />
+      
+      
+      <br />
+    <input type="submit" disabled={btnsub} className='sub' />
       </form>
+
     </div>
+
+    }   
     
+    { toggleBtn == true ?  <Viewproduct allData={arr} />  : "" }
+
     </>);
 }
 

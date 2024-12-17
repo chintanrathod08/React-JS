@@ -18,8 +18,7 @@ function Form(){
             email,
             password
         }
-
-
+        
         setArr([...arr,obj])
 
         alert("Data Added")
