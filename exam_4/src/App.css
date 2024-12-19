@@ -1,0 +1,10 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", serif;
+}
+
+form{
+  box-shadow: 0px 0px 15px 0px orangered;
+}
