@@ -121,7 +121,7 @@ function Product() {
                 <option value="lowprice">Low to High</option>
             </select> <br /> <br />
 
-            <input type="submit" className='cursor-pointer text-[18px] border w-[60%] h-[35px] text-[white] bg-[orangered] rounded-[10px]' value={edit == "" ? "submit" : "Edit" } /> 
+            <input type="submit" className='cursor-pointer text-[18px] border w-[60%] h-[35px] text-[white] bg-[orangered] rounded-[10px]' value={ edit == "" ? "submit" : "Edit" } /> 
             
         </form>
         </center>
