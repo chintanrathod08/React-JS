@@ -1,11 +1,11 @@
 import React from 'react'
 
-function About() {
+function Studio() {
   return (
     <div>
-      about
+      
     </div>
   )
 }
 
-export default About
+export default Studio
