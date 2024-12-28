@@ -28,21 +28,17 @@ function Singleproduct() {
       },[]) 
 
 
-      const hlAddcart=(cartid)=>{
-        setCart([...cart,obj])
-
-        const cartdata = cart.map((el)=>{
-
-          if(el.id == cartid ){
-            alert("This Item already present")
+      const hlAddcart=()=>{
+          const data = cart.filter((el)=>{
+            el.id == id })
+          console.log(data);
+          if(data.length){
+            alert("item already present")
           }
           else{
-            return setObj(cartdata) 
+            setCart([...cart,{...obj,quantity : 1}])
           }
-
-        })
-       
-      }
+       }
 
 
    return (

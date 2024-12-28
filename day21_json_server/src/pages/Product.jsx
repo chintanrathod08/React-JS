@@ -1,79 +1,57 @@
 import React, { useState } from 'react'
-import Productlist from '../components/Productlist'
+import Productlist from './Productlist'
 
-function Product() {
-
-  const [product,setProduct] = useState({
-    proimg : "",
-    title : "",
-    price : "",
-    des : ""
-  })
-
-  const [arr,setArr] = useState([])
-  
-
- const hlChange = (p)=>{
-    const {name, value} = p.target
-    setProduct({...product, [name] : value })
-    console.log(product);
-  }
-
-  const hlSubmit =(d)=>{
-    d.preventDefault()
-
-    
-    fetch(`http://localhost:3000/product`,{
-        method : "POST",
-        headers : { "Content-Type" : "application/JSON" },
-        body : JSON.stringify(product)
+function Productform() {
+    var [Data, setData] = useState({
+        Title: "",
+        Price: '',
+        Img: "" 
     })
-    .then((Res)=>{
-      return Res.json() 
-    })
-    .then((res)=>{
-      console.log(res);
-    })
-    .catch((Err)=>{
-      console.log(Err);
-    })
-
-    setProduct({
-      proimg : "",
-      title : "",
-      price : "",
-      des : ""
-    })
-
-    setArr([...arr,product])
-
-    if(product.length != 0){
-      alert("Please enter product data")
+    function handdel(h) {
+        var {value,name} = h.target
+        setData({ ...Data, [name]: value })
 
     }
-    else{
-      alert("Product data added successfull")
-      
+    function send(hi) {
+        hi.preventDefault()
+
+        fetch(`http://localhost:3000/product`,{
+            method : "POST",
+            headers : {
+                "content-type" : "application"
+            },
+            body : JSON.stringify(Data)
+        })
+
+        alert("Product adeddd.....")
+
+        setData({
+            Title: "",
+            Price: '',
+            Img: "" 
+        })
 
     }
 
-  }
+   
 
 
-
-  return (
-    <div>
-     <center> <form action="" onSubmit={hlSubmit} ><br />
-        <h1>Product Form</h1><br />
-        <input type="text" name='proimg' value={product.img} onChange={hlChange} placeholder='Enter Product ImgURL'   /> <br /><br />
-        <input type="text" name='title' value={product.title} onChange={hlChange}  placeholder='Enter Product Name'  /><br /><br />
-        <input type="text" name='price' value={product.price} onChange={hlChange}  placeholder='Enter Product Price'  /><br /><br />
-        <input type="text" name='des' value={product.des} onChange={hlChange}  placeholder='Enter Product Description'  /><br /><br />
-        <input type="submit" id="sub"  />
-      </form> </center>
-      <Productlist prodata={arr} />
-    </div>
+    return (
+      <>
+      <div className='bapo'>
+          <div className="bachu">
+              <h1>Enter Product Data</h1>
+              <form action="" onSubmit={send}>
+                  <input value={Data.Title} className='input' type="text" required name='Title' placeholder='Enter Product Title' onChange={handdel}/> <br />
+                  <input value={Data.Price} className='input' type="text" required name='Price' placeholder='Enter Product Price' onChange={handdel } /> <br />
+                  <input value={Data.Img} className='input' type="text" required name='Img' placeholder='Enter Product Imgage URL' onChange={handdel } /> <br />
+                  <input className='input' type="submit" value="Add Product"  />
+              </form>
+            </div>
+            </div>
+            <Productlist/>
+        </>
   )
 }
 
-export default Product
+export default Productform
