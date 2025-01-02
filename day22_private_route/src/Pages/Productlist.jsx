@@ -2,32 +2,43 @@ import React, { useEffect, useState } from 'react'
 
 function Productlist() {
 
-  const [product,setProduct] = useState([])
-  
+  const [productlist,setProductlist] = useState([])
+
   useEffect(()=>{
     fetch(`http://localhost:3000/product`)
-    .then((Res)=>{
-      return Res.json()
+    .then((res)=>{
+      return res.json()
     })
     .then((res)=>{
-      setProduct(res)
-      console.log(res);
+      setProductlist(res)
     })
-    .catch((Err)=>{
-      console.log(Err);
+    .catch((err)=>{
+      console.log(err);
     })
-  },[product])
+  },[productlist])
+
+  const handleDelete =(IDdelete)=>{
+    fetch(`http://localhost:3000/product/${IDdelete}`,{
+      method : "DELETE",
+    })
+    .then((Res)=>{
+     console.log(Res);
+    })
+  }
+
 
   return (
     <div>
-       { product.map((el)=>{
-        return <>
-        <img src={el.proimg} alt="" />
-        <h2>{el.title}</h2>
-        <p>{el. price}</p>
-        <p>{el.dis}</p>
-        </>
-       }) }
+        {productlist.map((el)=>{
+            return <> <div key={el.id}>
+             <img src={el.proimg} alt="" />
+            <h1>{el.proname}</h1>
+            <h3>{el.proprice}</h3>
+            <p>{el.prodis}</p>
+            <button onClick={()=>{handleDelete(el.id)}} >Delete</button>
+            </div>
+            </>})
+        }
     </div>
   )
 }

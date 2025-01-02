@@ -1,54 +1,52 @@
 import React, { useState } from 'react'
-import Productlist from './Productlist'
+import Productlist from './productlist'
 
 function Product() {
-  
+
   const [product,setProduct] = useState({
     proimg : "",
-    title : "",
-    price : "",
-    dis : ""
+    proname : "",
+    proprice : "",
+    prodis : ""
   })
 
-  const hlChange=(e)=>{
-    const {name, value} = e.target
-    setProduct({...product, [name] : value })
-    console.log(product);
+  const handleChange=(e)=>{
+    const {name,value} = e.target
+    setProduct({...product,[name] : value})
   }
 
-  const hlSubmit=(e)=>{
-    e.preventDefault()
+  const handleSubmit=(j)=>{
+    j.preventDefault()
 
     fetch(`http://localhost:3000/product`,{
       method : "POST",
-      headers : {"Content-Type" : "application/JSON" },
+      headers : {"content-type" : "application/JSON"},
       body : JSON.stringify(product)
-    })
 
-    alert("This Product adedd...")
+
+    })
 
     setProduct({
-    proimg : "",
-    title : "",
-    price : "",
-    dis : ""
+      proimg : "",
+    proname : "",
+    proprice : "",
+    prodis : ""
     })
-
   }
 
-
   return (
-    <div><center>
-      <form action="" onSubmit={hlSubmit} >
-      <h1>Product Form</h1> <br />
-      <input type="text" name='proimg' value={product.proimg}  placeholder='Product ImgUrl ' onChange={hlChange}  /><br /><br />
-      <input type="text" name='title' value={product.title}  placeholder='Product name' onChange={hlChange}  /><br /><br />
-      <input type="text" name='price' value={product.price}  placeholder='Product price' onChange={hlChange}  /><br /><br />
-      <input type="text" name='dis' value={product.dis}  placeholder='Product discreaption' onChange={hlChange}  /><br /><br />
-      <input type="submit" />
+    <div>
+      <center> <br />
+        <h1>Product</h1> <br />
+      <form action="" onSubmit={handleSubmit}>
+        <input type="text" name='proimg' value={product.proimg} placeholder='productimage' onChange={handleChange}/> <br /><br />
+        <input type="text" name='proname' value={product.proname} placeholder='productname' onChange={handleChange}/> <br /><br />
+        <input type="text" name='proprice' value={product.proprice} placeholder='productprice' onChange={handleChange}/> <br /><br />
+        <input type="text" name='prodis' value={product.prodis} placeholder='productdiscription' onChange={handleChange}/> <br /><br />
+        <input type="submit" />
       </form>
-    </center>
-    <Productlist/>
+      </center> <br />
+   <center><Productlist /></center>   
     </div>
   )
 }
