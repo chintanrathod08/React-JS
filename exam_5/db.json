@@ -1,4 +1,11 @@
 {
   "products": [],
-  "users": []
+  "users": [
+    {
+      "id": "a644",
+      "user": "chintan",
+      "email": "crathod486@rku.ac.in",
+      "password": "12345"
+    }
+  ]
 }
