@@ -1,13 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux'
 import {  DEC1,  INC1 } from '../Redux/actionType';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 function Counter1() {
 
     const Data = useSelector((Store)=>Store.ctr1)
     console.log(Data);
-
-    
 
     const dispatch = useDispatch()
 

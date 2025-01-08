@@ -1,8 +1,8 @@
 import { INC1, DEC1, INC2, DEC2 } from "./actionType";
 
-const count1 = 0
+const count = 0
 
-export const reducer1 = (state = count1,action)=>{
+export const reducer1 = (state = count,action)=>{
 
     switch(action.type){
         case INC1 :
@@ -15,14 +15,9 @@ export const reducer1 = (state = count1,action)=>{
             return state
     }
 
-    
-
-
 }
 
-const count2 = 0
-
-export const reducer2 = (state = count2,action)=>{
+export const reducer2 = (state = count,action)=>{
 
     switch(action.type){
         case INC2 :
@@ -35,9 +30,4 @@ export const reducer2 = (state = count2,action)=>{
             return state
     }
 
-
 }
-
-
-
-

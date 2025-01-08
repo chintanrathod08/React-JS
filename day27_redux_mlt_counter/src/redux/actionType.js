@@ -1,0 +1,5 @@
+export const INC1 = "INC1"
+export const DEC1 = "DEC1"
+export const MLT1 = "MLT1"
+export const MLT2 = "MLT2"
+export const INPUT = "INPUT"
