@@ -11,15 +11,13 @@ function Counter3() {
     const dispatch1 = useDispatch()
     
    const hlChange=(e)=>{
-
     const{value}= e.target
-
-     setUser(value)
+    setUser(value)
    }
 
     const hlSubmit=(e)=>{
         e.preventDefault()
-        dispatch1({type : INPUT,payload: Number (user) })
+        dispatch1({type : INPUT, payload: Number (user) })
         console.log(user);
     }
 
@@ -27,8 +25,8 @@ function Counter3() {
     <div>
         <form action="" onSubmit={hlSubmit}>
            <h1> {data} </h1>
-            <input type="number"  onChange={hlChange} />
-            <input type="submit" />
+            <input type="number" id='int1' placeholder='Enter Number' onChange={hlChange} /> 
+            <input type="submit" id='int2'disabled={ user <= 0 }  />
         </form>
     </div>
   )

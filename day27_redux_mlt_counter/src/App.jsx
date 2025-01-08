@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Counter1/>
-      <Counter2/><br /><br />
+      <Counter2/><br />
       <Counter3/>
     </>
   )

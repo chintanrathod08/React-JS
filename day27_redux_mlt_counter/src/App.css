@@ -40,3 +40,15 @@
 .read-the-docs {
   color: #888;
 }
+
+
+#int1{
+  width: 200px;
+  height: 25px;
+  border-radius: 7px 0px 0px 7px;
+  padding-left: 11px;
+}
+#int2{
+  height: 29.5px;
+  border-radius: 0px 7px 7px 0px;
+}

@@ -5,7 +5,6 @@ const value = {
     count1 : 0,
     count2 : 2,
     count3 : 2
-
 }
 
 export const reducer1 = (state = value ,{type,payload}) => {
@@ -23,7 +22,7 @@ export const reducer1 = (state = value ,{type,payload}) => {
             return {...state,count2 : state.count2 / 2}
     
             case INPUT  :
-                return {...state,count3 : state.count3 *payload}
+                return {...state,count3 : state.count3 * payload}
         
         default :
             return state
