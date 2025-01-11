@@ -19,7 +19,7 @@ function Counter3() {
         e.preventDefault()
         dispatch1({type : INPUT, payload: Number (user) })
         console.log(user);
-    }
+      } 
 
   return (
     <div>
