@@ -1,35 +1,4 @@
 {
   "products": [],
-  "users": [
-    {
-      "id": "f827",
-      "user": "chintan",
-      "email": "crathod486@rku.ac.in",
-      "password": "12345"
-    },
-    {
-      "id": "a5cc",
-      "user": "chintan",
-      "email": "crathod486@rku.ac.in",
-      "password": "12345"
-    },
-    {
-      "id": "1d91",
-      "user": "chintan",
-      "email": "crathod486@rku.ac.in",
-      "password": "12345"
-    },
-    {
-      "id": "9de7",
-      "user": "chintan",
-      "email": "crathod486@rku.ac.in",
-      "password": "12345"
-    },
-    {
-      "id": "306d",
-      "user": "chintan",
-      "email": "crathod486@rku.ac.in",
-      "password": "12345"
-    }
-  ]
+  "users": []
 }

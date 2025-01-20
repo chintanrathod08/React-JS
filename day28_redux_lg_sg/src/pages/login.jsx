@@ -26,7 +26,7 @@ function Login() {
 
    const hlSubmit=(e)=>{
     e.preventDefault()
-    dispatch({ type : LOADING })
+    // dispatch({ type : LOADING })
     axios.get(`http://localhost:3000/user?email=${state.email}`)
     .then((res)=>{
       console.log(res);
@@ -57,3 +57,5 @@ function Login() {
 }
 
 export default Login
+
+

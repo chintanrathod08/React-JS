@@ -26,3 +26,4 @@ export const Loginreducer =(state = count , {type,payload} )=>{
             return state
     }
 }
+
