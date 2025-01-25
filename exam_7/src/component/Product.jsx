@@ -9,6 +9,8 @@ function Product() {
     protitle : "",
     proprice : ""
    })   
+
+
    const [state,setState] = useState([])
    const [edit,setEdit] = useState(null)
 
@@ -22,12 +24,9 @@ function Product() {
     console.log(product);
     }
 
-     const UseCollection = collection(db,"prodata")
 
      const hlSubmit= async (d)=>{
         d.preventDefault()
-        console.log(d);
-        
         if(edit == null){
             await  addDoc(UseCollection,product)
             alert("Product Data Added Successfully....")
@@ -36,13 +35,20 @@ function Product() {
             await updateDoc(alldata,product)
         }
         
-       
-        setEdit(null)
+        setProduct({
+            proname : "",
+            protitle : "",
+            proprice : ""
+        })
+        
+       setEdit(null)
       
         getData()
         
     }   
 
+    const UseCollection = collection(db,"prodata")
+    
     const getData = async ()=>{
         const prodata = await getDocs(UseCollection)
         const ans = prodata.docs.map((el)=>{
@@ -50,10 +56,17 @@ function Product() {
         })
         setState(ans)
     }   
+     console.log(product)
+
 
     const hlDelete = async (iddl)=>{
         const dlData = doc(db,"prodata",iddl)
         await deleteDoc(dlData)
+        setProduct({
+            proname : "",
+            protitle : "",
+            proprice : ""
+        })
         getData()
     }
 
@@ -61,9 +74,8 @@ function Product() {
         setEdit(idet)
         state.forEach((el)=>{
             if(el.id == idet){
-                setProduct(product)
+                setProduct(el)
             }
-            getData()
         })
     }
 
