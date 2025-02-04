@@ -49,7 +49,7 @@ function SignUp(){
        <input type="submit" />
        </form>
        { state.map((el)=>{
-            return <>  <h1>{el.user}</h1>
+            return <><h1>{el.user}</h1>
             <h2>{el.email}</h2>
             <h2>{el.pass}</h2>
             <button>Edite</button>
